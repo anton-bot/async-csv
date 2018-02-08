@@ -1,0 +1,28 @@
+{
+  "name": "async-csv",
+  "version": "1.0.0",
+  "description": "ES7 async-await wrapper for the csv package.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/catcher-in-the-try/async-csv.git"
+  },
+  "keywords": [
+    "csv",
+    "async",
+    "es7",
+    "csv-parser"
+  ],
+  "author": "Anton Ivanov <anton@ivanov.hk>",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/catcher-in-the-try/async-csv/issues"
+  },
+  "homepage": "https://github.com/catcher-in-the-try/async-csv#readme",
+  "dependencies": {
+    "csv": "^2.0.0"
+  }
+}
