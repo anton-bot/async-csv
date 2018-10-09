@@ -1,10 +1,10 @@
 {
   "name": "async-csv",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "ES7 async-await wrapper for the csv package.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"No tests for async-csv\""
+    "test": "node node_modules/jest/bin/jest"
   },
   "repository": {
     "type": "git",
@@ -14,7 +14,11 @@
     "csv",
     "async",
     "es7",
-    "csv-parser"
+    "csv-parser",
+    "csv-stringify",
+    "await-csv",
+    "async-csv-formatter",
+    "save-csv-to-file"
   ],
   "author": "Anton Ivanov <anton@ivanov.hk>",
   "license": "Unlicense",
@@ -23,6 +27,9 @@
   },
   "homepage": "https://github.com/catcher-in-the-try/async-csv#readme",
   "dependencies": {
-    "csv": "^2.0.0"
+    "csv": "^4.0.0"
+  },
+  "devDependencies": {
+    "jest": "^23.6.0"
   }
 }
