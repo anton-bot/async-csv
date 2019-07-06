@@ -1,5 +1,5 @@
 /**
- * @fileoverview ES7 wrapper for the csv package.
+ * @fileoverview ES7 async wrapper for the csv package.
  */
 
 'use strict';
@@ -8,37 +8,39 @@ const csv = require('csv');
 
 class CsvAsync {
   /**
-   * @param {object} options
+   * @param {object} [options]
    * @param {number} options.seed
    * @param {number} options.columns
    * @param {number} options.length
    */
   static generate(options) {
     return new Promise((resolve, reject) => {
-      csv.generate(options, (error, output) => {
-        if (error) {
-          reject(error);
-        } else {
-          resolve(output);
-        }
-      });
+      const callback = (error, output) =>
+        error
+          ? reject(error)
+          : resolve(output);
+
+      options
+        ? csv.generate(options, callback)
+        : csv.generate(callback);
     });
   }
 
   /**
-   *
+   * Parses a CSV file into an array of rows.
    * @param {string} input
-   * @param {object} options
+   * @param {object} [options]
    */
   static parse(input, options) {
     return new Promise((resolve, reject) => {
-      csv.parse(input, options, (error, output) => {
-        if (error) {
-          reject(error);
-        } else {
-          resolve(output);
-        }
-      });
+      const callback = (error, output) =>
+        error
+          ? reject(error)
+          : resolve(output);
+
+      options
+        ? csv.parse(input, options, callback)
+        : csv.parse(input, callback);
     });
   }
 
@@ -50,23 +52,14 @@ class CsvAsync {
    */
   static transform(data, handler, options) {
     return new Promise((resolve, reject) => {
-      if (options) {
-        csv.transform(data, handler, options, (error, data) => {
-          if (error) {
-            reject(error);
-          } else {
-            resolve(data);
-          }
-        });
-      } else {
-        csv.transform(data, handler, (error, data) => {
-          if (error) {
-            reject(error);
-          } else {
-            resolve(data);
-          }
-        });
-      }
+      const callback = (error, output) =>
+        error
+          ? reject(error)
+          : resolve(output);
+
+      options
+        ? csv.transform(data, handler, options, callback)
+        : csv.transform(data, handler, callback);
     });
   }
 
@@ -77,23 +70,14 @@ class CsvAsync {
    */
   static stringify(data, options) {
     return new Promise((resolve, reject) => {
-      if (options) {
-        csv.stringify(data, options, (error, output) => {
-          if (error) {
-            reject(error);
-          } else {
-            resolve(output);
-          }
-        });
-      } else {
-        csv.stringify(data, (error, output) => {
-          if (error) {
-            reject(error);
-          } else {
-            resolve(output);
-          }
-        });
-      }
+      const callback = (error, output) =>
+        error
+          ? reject(error)
+          : resolve(output);
+
+      options
+        ? csv.stringify(data, options, callback)
+        : csv.stringify(data, callback);
     });
   }
 }

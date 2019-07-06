@@ -1,6 +1,6 @@
 {
   "name": "async-csv",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "ES7 async-await wrapper for the csv package.",
   "main": "index.js",
   "scripts": {
