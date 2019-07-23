@@ -1,6 +1,6 @@
 {
   "name": "async-csv",
-  "version": "3.0.0",
+  "version": "3.0.0-pre",
   "description": "TypeScript / JavaScript async-await wrapper for the csv package.",
   "main": "index.js",
   "scripts": {
