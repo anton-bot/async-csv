@@ -1,11 +1,12 @@
 {
   "name": "async-csv",
-  "version": "3.0.0-pre",
+  "version": "3.0.0-pre3",
   "description": "TypeScript / JavaScript async-await wrapper for the csv package.",
   "main": "index.js",
   "scripts": {
     "build": "tsc index.ts",
-    "test": "npm run build && node node_modules/jest/bin/jest"
+    "test": "npm run build && node node_modules/jest/bin/jest",
+    "dts": "tsc --declaration index.ts"
   },
   "repository": {
     "type": "git",

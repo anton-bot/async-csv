@@ -71,7 +71,7 @@ class CsvAsync {
    * @param {string[][]} data
    * @param {object} options
    */
-  static stringify(data: (string|number|null|undefined)[][], options?: CsvStringifyOptions) {
+  static stringify(data: (string|number|null|undefined)[][], options?: CsvStringifyOptions): Promise<string> {
     return new Promise((resolve, reject) => {
       const callback = (error, output) =>
         error
