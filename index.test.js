@@ -1,4 +1,4 @@
-const csv = require('./');
+const csv = require('./index.js');
 
 describe('csv-generate', () => {
   it('must generate a specific CSV file', async () => {
@@ -19,6 +19,18 @@ describe('csv-stringify', () => {
     const result = await csv.stringify(sampleData);
 
     expect(result).toBe('HK,Hong Kong Island\nKLN,Kowloon\nNT,New Territories\n');
+  });
+
+  it('must handle null/undefined/number', async () => {
+    const sampleData = [
+      ['HK', undefined],
+      ['KLN', null],
+      ['NT', 3],
+    ];
+
+    const result = await csv.stringify(sampleData);
+
+    expect(result).toBe(`HK,\nKLN,\nNT,3\n`);
   });
 });
 

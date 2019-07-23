@@ -1,6 +1,9 @@
-# ES7 async wrapper for csv package #
+# async wrapper for csv package #
 
-This is a wrapper for the popular `csv` package in NPM that can be used with the ES7 async-await pattern, instead of using callbacks.
+This is a TypeScript / JavaScript wrapper for the popular `csv` package that
+can be used with the ES7 async-await pattern, instead of using callbacks.
+
+Also, it features type definitions which is useful for TypeScript.
 
 ## If you just want to read a CSV file ##
 
