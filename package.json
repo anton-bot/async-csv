@@ -1,9 +1,10 @@
 {
   "name": "async-csv",
-  "version": "2.1.1",
+  "version": "3.0.0",
   "description": "ES7 async-await wrapper for the csv package.",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
     "test": "node node_modules/jest/bin/jest"
   },
   "repository": {
@@ -30,6 +31,9 @@
     "csv": "^5.1.1"
   },
   "devDependencies": {
-    "jest": "^24.8.0"
+    "jest": "^24.8.0",
+    "tslint": "^5.18.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "typescript": "^3.5.3"
   }
 }
