@@ -1,12 +1,17 @@
 {
   "name": "async-csv",
-  "version": "3.0.0-pre3",
+  "version": "3.0.0",
   "description": "TypeScript / JavaScript async-await wrapper for the csv package.",
   "main": "index.js",
+  "types": "index.d.ts",
+  "files": ["index.js", "index.d.ts", "CHANGELOG.md"],
+  "engines": { "node": ">=18" },
   "scripts": {
-    "build": "tsc index.ts",
-    "test": "npm run build && node node_modules/jest/bin/jest",
-    "dts": "tsc --declaration index.ts"
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test index.test.js && npm run test:types",
+    "test:types": "tsc -p test/tsconfig.json",
+    "prepack": "npm run build",
+    "prepublishOnly": "npm test"
   },
   "repository": {
     "type": "git",
@@ -25,17 +30,14 @@
   "author": "Anton Ivanov <anton@ivanov.hk>",
   "license": "Unlicense",
   "bugs": {
-    "url": "https://github.com/catcher-in-the-try/async-csv/issues"
+    "url": "https://github.com/anton-bot/async-csv/issues"
   },
-  "homepage": "https://github.com/catcher-in-the-try/async-csv#readme",
+  "homepage": "https://github.com/anton-bot/async-csv#readme",
   "dependencies": {
-    "csv": "^5.1.1"
+    "csv": "^6.6.4"
   },
   "devDependencies": {
-    "@types/node": "^12.6.8",
-    "jest": "^24.8.0",
-    "tslint": "^5.18.0",
-    "tslint-eslint-rules": "^5.4.0",
-    "typescript": "^3.5.3"
+    "@types/node": "^18.19.130",
+    "typescript": "^6.0.3"
   }
 }

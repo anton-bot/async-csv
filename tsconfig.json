@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "Node16",
+    "strict": true,
+    "declaration": true,
+    "types": ["node"]
+  },
+  "files": ["index.ts"]
+}
